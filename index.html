@@ -12,6 +12,7 @@
 
 <body>
 
+
   <!-- Scroll Progress -->
   <!-- <div id="progress"></div> -->
 
@@ -42,7 +43,8 @@
     <h1>Hi, I'm <span>Anurag Singh</span></h1>
     <p class="para">Web Developer | Problem Solver</p>
     <div class="hero-actions">
-      <a href="assets/Resume.png" class="resume-btn" target="_blank" rel="noopener noreferrer" aria-label="Resume (opens in new tab)">Resume</a>
+      <a href="assets/Resume.png" class="resume-btn" target="_blank" rel="noopener noreferrer"
+        aria-label="Resume (opens in new tab)">Resume</a>
     </div>
 
     <!-- 
@@ -103,12 +105,13 @@
 
       <div class="projects-wrapper">
 
+        <!-- Project 01: Smart Dashboard -->
         <div class="project-row">
           <div class="project-info">
             <span class="project-index">01</span>
-            <h3>Project One</h3>
+            <h3>Smart Dashboard</h3>
             <p>
-            Interactive and simple, advance To-do list in which you can edit and delete tasks.
+              A smart dashboard implementation focused on data visualization and user experience.
             </p>
 
             <div class="project-tech">
@@ -117,28 +120,29 @@
               <span>JavaScript</span>
             </div>
             <div class="project-links">
-              <a href="#" target="_blank">
+              <a href="https://smart-dashboard-alpha.vercel.app/" target="_blank">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
               </a>
-              <a href="https://github.com/singhanurag0317-bit/TASKS/tree/main/ASSIGNMENT-TASKS/To-Do%20list" target="_blank">
+              <a href="https://github.com/singhanurag0317-bit/Smart-Dashboard" target="_blank">
                 <i class="fa-brands fa-github"></i> Code
               </a>
             </div>
-
-
           </div>
 
           <div class="project-visual">
-            <img src="https://www.shutterstock.com/image-photo/handwritten-do-list-on-notebook-600nw-2461186223.jpg" alt="to-do list">
+            <img
+              src="https://img.freepik.com/free-vector/infographic-dashboard-user-panel_52683-30026.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="Smart Dashboard">
           </div>
         </div>
 
+        <!-- Project 02: Decision Maker -->
         <div class="project-row reverse">
           <div class="project-info">
             <span class="project-index">02</span>
-            <h3>Project Two</h3>
+            <h3>Decision Maker</h3>
             <p>
-             A self made simple and clean digital clock with live time in 24 hours format.
+              An interactive tool designed to assist in making informed decisions efficiently.
             </p>
 
             <div class="project-tech">
@@ -148,22 +152,50 @@
             </div>
 
             <div class="project-links">
-              <a href="#" target="_blank">
+              <a href="https://decision-maker-five.vercel.app/" target="_blank">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
               </a>
-              <a href="https://github.com/singhanurag0317-bit/TASKS/tree/main/ASSIGNMENT-TASKS/Digital%20Clock" target="_blank">
+              <a href="https://github.com/singhanurag0317-bit/Decision_Maker.git" target="_blank">
                 <i class="fa-brands fa-github"></i> Code
               </a>
             </div>
 
           </div>
-
           <div class="project-visual">
-            <img src="https://img.clevup.in/307935/SQUAREDIGITALWALLCLOCK-1744206382425.jpeg?width=600&format=webp" alt="Digital Clock">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjDwQZh2-N_YAQTv5fkPj3MKmWXlNl_bDp_w&s"
+              alt="Decision Maker">
           </div>
         </div>
 
-        <!-- Repeat for 03, 04 -->
+        <!-- Project 03: To-Do List -->
+        <div class="project-row">
+          <div class="project-info">
+            <span class="project-index">03</span>
+            <h3>To-Do List</h3>
+            <p>
+              Interactive and simple, advance To-do list in which you can edit and delete tasks.
+            </p>
+
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+              </a>
+              <a href="https://github.com/singhanurag0317-bit/TASKS/ASSIGNMENT-TASKS/To-Do%20list" target="_blank">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+
+          <div class="project-visual">
+            <img src="https://www.shutterstock.com/image-photo/handwritten-do-list-on-notebook-600nw-2461186223.jpg"
+              alt="to-do list">
+          </div>
+        </div>
 
       </div>
     </div>
@@ -263,10 +295,14 @@
     <div class="contact-wrapper">
 
       <!-- Contact Form -->
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
+      <form class="contact-form" action="https://formsubmit.co/7a41ceb9fada0b818acd10ed3315869b" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <!-- Honeyport to prevent spam -->
+        <input type="text" name="_honey" style="display:none">
+        <!-- Disable captcha for cleaner flow -->
+        <input type="hidden" name="_captcha" value="false">
         <button type="submit">Send Message</button>
       </form>
 

@@ -68,18 +68,73 @@ form.addEventListener("submit", e => {
   e.preventDefault();
 
   const button = form.querySelector("button");
+  const originalText = button.innerText;
+
   button.innerText = "Sending...";
   button.disabled = true;
 
-  setTimeout(() => {
-    button.innerText = "Message Sent ✓";
-    button.style.background = "#6fd1c7";
-    form.reset();
-  }, 1200);
+  const formData = new FormData(form);
+
+  fetch("https://formsubmit.co/ajax/7a41ceb9fada0b818acd10ed3315869b", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(Object.fromEntries(formData))
+  })
+    .then(response => response.json())
+    .then(data => {
+      button.innerText = "Message Sent ✓";
+      button.style.background = "#6fd1c7";
+      form.reset();
+
+      setTimeout(() => {
+        button.innerText = originalText;
+        button.style.background = "";
+        button.disabled = false;
+      }, 5000);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      button.innerText = "Error! Try again.";
+      button.style.background = "#ff6b6b";
+
+      setTimeout(() => {
+        button.innerText = originalText;
+        button.style.background = "";
+        button.disabled = false;
+      }, 3000);
+    });
 });
 
 // Scroll reveal animation
-const reveals = document.querySelectorAll(".reveal");
+
+/* ===== 3D Tilt Effect ===== */
+const tiltElements = document.querySelectorAll(".project-visual, .about-card, .contact-form");
+
+tiltElements.forEach(el => {
+  el.addEventListener("mousemove", e => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Calculate rotation (max 15 degrees)
+    const xRot = -((y - rect.height / 2) / rect.height * 15);
+    const yRot = ((x - rect.width / 2) / rect.width * 15);
+
+    // Calculate glow position
+    el.style.setProperty('--x', x + 'px');
+    el.style.setProperty('--y', y + 'px');
+
+    el.style.transform = `perspective(1000px) rotateX(${xRot}deg) rotateY(${yRot}deg) scale(1.02)`;
+  });
+
+  el.addEventListener("mouseout", () => {
+    el.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
+  });
+});
+
 
 window.addEventListener("scroll", () => {
   reveals.forEach(section => {
