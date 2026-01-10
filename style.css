@@ -981,7 +981,7 @@ footer {
 /* Disable hover 'swim' on project images */
 .project-row:hover .project-visual img {
   transform: none;
-} 
+}
 
 /* small overlay label */
 .project-visual::after {
@@ -1060,7 +1060,11 @@ footer {
 }
 
 .skill-lab {
-  background: radial-gradient(circle at center, #031b63, #142739);
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   border-radius: 15px;
 }
@@ -1148,7 +1152,7 @@ footer {
 
 .about-card:hover::after {
   opacity: 1;
-} 
+}
 
 
 
