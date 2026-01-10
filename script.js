@@ -109,6 +109,20 @@ form.addEventListener("submit", e => {
 });
 
 // Scroll reveal animation
+const revealElements = document.querySelectorAll('.reveal');
+
+if (revealElements && revealElements.length) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
 
 /* ===== 3D Tilt Effect ===== */
 const tiltElements = document.querySelectorAll(".project-visual, .about-card, .contact-form");
