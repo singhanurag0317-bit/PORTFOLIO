@@ -124,30 +124,10 @@ if (revealElements && revealElements.length) {
   revealElements.forEach(el => revealObserver.observe(el));
 }
 
-/* ===== 3D Tilt Effect ===== */
-const tiltElements = document.querySelectorAll(".project-visual, .about-card, .contact-form");
+/* ===== 3D Tilt Effect (disabled) ===== */
+// Tilt effect removed from project visuals and contact form to prevent hover 'swimming'.
+// If desired in the future, re-enable by restoring the event listeners.
 
-tiltElements.forEach(el => {
-  el.addEventListener("mousemove", e => {
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Calculate rotation (max 15 degrees)
-    const xRot = -((y - rect.height / 2) / rect.height * 15);
-    const yRot = ((x - rect.width / 2) / rect.width * 15);
-
-    // Calculate glow position
-    el.style.setProperty('--x', x + 'px');
-    el.style.setProperty('--y', y + 'px');
-
-    el.style.transform = `perspective(1000px) rotateX(${xRot}deg) rotateY(${yRot}deg) scale(1.02)`;
-  });
-
-  el.addEventListener("mouseout", () => {
-    el.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
-  });
-});
 
 
 window.addEventListener("scroll", () => {
