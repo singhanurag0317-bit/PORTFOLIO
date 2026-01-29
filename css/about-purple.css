@@ -1,0 +1,239 @@
+/* ===== About Section Purple Theme ===== */
+
+.about-header {
+    animation: fade-in-up 0.8s ease-out;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Purple Card Base */
+.purple-card {
+    position: relative;
+    background: rgba(19, 19, 41, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.purple-card:hover {
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 12px 48px rgba(168, 85, 247, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Animated Glow Effect */
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.1), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.purple-card:hover .card-glow {
+    opacity: 1;
+    animation: rotate-glow 8s linear infinite;
+}
+
+@keyframes rotate-glow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 3px;
+}
+
+/* Story Card */
+.about-story-card p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.about-story-card .intro-text {
+    color: var(--text);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+    padding-left: 16px;
+    border-left: 3px solid var(--primary);
+}
+
+/* Info List */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list li:hover {
+    padding-left: 8px;
+    background: rgba(168, 85, 247, 0.05);
+    margin: 0 -8px;
+    padding-right: 8px;
+    border-radius: 8px;
+}
+
+.info-label {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* Timeline */
+.timeline-container {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+    border: 2px solid var(--bg);
+}
+
+.timeline-year {
+    display: inline-block;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.timeline-title {
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-desc {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .about-title {
+        font-size: 2.5rem !important;
+    }
+
+    .purple-card {
+        padding: 30px !important;
+    }
+
+    .timeline-container {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-title {
+        font-size: 2rem !important;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .purple-card {
+        padding: 24px !important;
+    }
+}

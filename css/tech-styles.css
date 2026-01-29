@@ -1,0 +1,78 @@
+/* ===== Tech Stack Ticker ===== */
+.tech-ticker {
+    margin-top: -60px;
+    padding: 30px 0;
+    background: rgba(31, 40, 51, 0.4);
+    border-top: 1px solid rgba(102, 252, 241, 0.1);
+    border-bottom: 1px solid rgba(102, 252, 241, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker-content {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+.tech-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 30px;
+    margin: 0 15px;
+    background: rgba(11, 12, 16, 0.6);
+    border-radius: 30px;
+    border: 1px solid rgba(102, 252, 241, 0.2);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--primary);
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tech-item i {
+    font-size: 1.2rem;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-label {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+}

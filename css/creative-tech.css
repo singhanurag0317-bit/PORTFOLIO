@@ -1,0 +1,414 @@
+/* ===== Creative Tech Theme Enhancements ===== */
+
+/* --- 1. Quantum Arc Reactors (System Diagnostics) --- */
+.hud-stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    max-width: 1200px;
+    perspective: 1000px;
+}
+
+.hud-stat-card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(0, 217, 163, 0.1) 0%, rgba(10, 15, 20, 0.8) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 217, 163, 0.1), inset 0 0 20px rgba(0, 217, 163, 0.2);
+    border: 1px solid rgba(0, 217, 163, 0.3);
+    transition: all 0.4s ease;
+}
+
+/* Rotating Outer Ring */
+.hud-stat-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 2px dashed rgba(0, 217, 163, 0.4);
+    animation: reactor-spin 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes reactor-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Inner Spinning Core */
+.hud-stat-card::after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    animation: core-spin 3s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes core-spin {
+    0% {
+        transform: rotate(0deg) scale(0.9);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(0.9);
+    }
+}
+
+.hud-stat-card:hover::before {
+    animation-duration: 4s;
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+}
+
+.hud-stat-card:hover::after {
+    animation-duration: 1s;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    box-shadow: 0 0 50px rgba(0, 217, 163, 0.6);
+}
+
+.hud-value {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 15px var(--secondary);
+    z-index: 2;
+}
+
+.hud-label {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-top: 5px;
+    z-index: 2;
+    transition: color 0.3s;
+}
+
+.hud-stat-card:hover .hud-value {
+    color: #fff;
+    text-shadow: 0 0 20px #fff, 0 0 40px var(--primary);
+}
+
+.hud-stat-card:hover .hud-label {
+    color: var(--primary);
+}
+
+/* Cipher Effect (JS Helper Class) */
+.cipher-active {
+    color: var(--secondary);
+    text-shadow: none;
+    font-family: var(--font-heading);
+}
+
+
+/* --- 2. Holographic Modules (Key Strengths) --- */
+.holo-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    perspective: 1000px;
+    /* Enable 3D perspective */
+}
+
+.holo-card {
+    width: 260px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+/* Holographic sheen */
+.holo-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
+    transform: rotate(45deg);
+    animation: holo-shine 6s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes holo-shine {
+    0% {
+        transform: translateY(-30%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateY(30%) rotate(45deg);
+    }
+}
+
+.holo-card:hover {
+    transform: translateY(-10px) rotateX(10deg);
+    border-color: rgba(255, 140, 66, 0.5);
+    /* Accent color */
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 140, 66, 0.2);
+}
+
+.holo-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.holo-card:hover .holo-icon-wrapper {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(255, 140, 66, 0.4);
+}
+
+.holo-icon {
+    font-size: 2rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.holo-card:hover .holo-icon {
+    color: #fff;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.holo-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.holo-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- 3. Circuit Pipeline (Workflow) --- */
+.circuit-container {
+    padding: 60px 20px;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Central glowing line connecting items */
+.circuit-line {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    right: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    transform: translateY(-50%);
+    border-radius: 4px;
+}
+
+/* Animated pulse travelling the line */
+.circuit-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    animation: pulse-travel 3s linear infinite;
+}
+
+@keyframes pulse-travel {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.circuit-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    /* Allow wrapping on mobile */
+    gap: 40px;
+}
+
+.circuit-node {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+/* Hexagon Shape */
+.circuit-hex {
+    width: 100px;
+    height: 100px;
+    background: #1a1a1a;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.circuit-hex::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #0D0D0D;
+    /* Inner dark fill */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: -1;
+}
+
+.circuit-hex-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    z-index: -2;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    opacity: 0.5;
+}
+
+.circuit-node:hover .circuit-hex {
+    transform: scale(1.15) rotate(30deg);
+}
+
+.circuit-node:hover .circuit-hex i {
+    transform: rotate(-30deg);
+    /* Counter-rotate icon */
+}
+
+.circuit-hex i {
+    font-size: 2.2rem;
+    background: linear-gradient(180deg, #fff, #aaa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+}
+
+.circuit-title {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.circuit-node:hover .circuit-title {
+    color: var(--secondary);
+    opacity: 1;
+}
+
+.circuit-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.circuit-node:hover .circuit-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive adjustments per user request */
+@media (max-width: 900px) {
+    .circuit-line {
+        display: none;
+    }
+
+    .circuit-grid {
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .circuit-desc {
+        opacity: 1;
+        transform: none;
+    }
+}

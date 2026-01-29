@@ -1,0 +1,225 @@
+/* ===== Circular Stats Section ===== */
+.stats-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.circular-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 60px;
+    justify-items: center;
+    align-items: center;
+}
+
+.circular-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.circular-stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.circular-progress {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+.circular-progress svg {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 8;
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: url(#gradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 439.8;
+    /* 2 * PI * 70 */
+    stroke-dashoffset: 439.8;
+    transition: stroke-dashoffset 2s ease-out;
+    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.5));
+}
+
+/* Gradient for each ring */
+.circular-stat-item:nth-child(1) .progress-ring-circle {
+    stroke: var(--primary);
+    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.6));
+}
+
+.circular-stat-item:nth-child(2) .progress-ring-circle {
+    stroke: var(--secondary);
+    filter: drop-shadow(0 0 8px rgba(0, 217, 163, 0.6));
+}
+
+.circular-stat-item:nth-child(3) .progress-ring-circle {
+    stroke: var(--accent);
+    filter: drop-shadow(0 0 8px rgba(255, 140, 66, 0.6));
+}
+
+.circular-stat-item:nth-child(4) .progress-ring-circle {
+    stroke: var(--primary-light);
+    filter: drop-shadow(0 0 8px rgba(247, 147, 30, 0.6));
+}
+
+.stat-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.stat-number-circle {
+    font-size: 2.8rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: #fff;
+    line-height: 1;
+}
+
+.stat-suffix {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.8;
+}
+
+.stat-label-circle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--font-heading);
+}
+
+/* Animation classes */
+.circular-stat-item.animated .progress-ring-circle {
+    animation: fillCircle 2s ease-out forwards;
+}
+
+/* Achievement Grid Styling */
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.achievement-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 107, 53, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-item i {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-heading {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .circular-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .circular-progress {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circular-progress svg {
+        width: 140px;
+        height: 140px;
+    }
+
+    .progress-ring-bg,
+    .progress-ring-circle {
+        r: 60;
+    }
+
+    .stat-number-circle {
+        font-size: 2.2rem;
+    }
+
+    .stat-suffix {
+        font-size: 1.4rem;
+    }
+
+    .stat-label-circle {
+        font-size: 0.85rem;
+    }
+
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .achievement-item {
+        padding: 25px 15px;
+    }
+
+    .achievement-item i {
+        font-size: 1.6rem !important;
+    }
+
+    .achievement-item h3 {
+        font-size: 1rem !important;
+    }
+
+    .achievement-item p {
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .circular-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+}
