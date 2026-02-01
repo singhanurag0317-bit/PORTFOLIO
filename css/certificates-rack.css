@@ -1,0 +1,537 @@
+/* ===== Certificates - Diagonal Timeline Design ===== */
+
+.certificates {
+    min-height: 100vh;
+    padding: 80px 20px 80px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(13, 13, 13, 1) 0%, rgba(18, 18, 25, 1) 100%);
+}
+
+/* Diagonal Lines Background */
+.certificates::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 100px,
+            rgba(0, 217, 163, 0.02) 100px,
+            rgba(0, 217, 163, 0.02) 102px);
+    animation: diagonal-move 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes diagonal-move {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(100px, 100px);
+    }
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Timeline Container */
+.cert-rack-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 80px 20px;
+}
+
+/* Diagonal Timeline Line */
+.rack-frame {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.rack-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 217, 163, 0.3) 20%,
+            rgba(0, 217, 163, 0.5) 50%,
+            rgba(0, 217, 163, 0.3) 80%,
+            transparent 100%);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* Floating Status Header */
+.rack-header {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 25px;
+    background: rgba(0, 217, 163, 0.1);
+    border: 1px solid rgba(0, 217, 163, 0.3);
+    border-radius: 50px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0, 217, 163, 0.15);
+    z-index: 10;
+}
+
+.rack-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.rack-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--secondary);
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background: var(--secondary);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--secondary);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.3);
+    }
+}
+
+/* Certificate Card - Alternating Sides */
+.cert-blade {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+}
+
+/* Alternate positioning */
+.cert-blade:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 80px;
+}
+
+.cert-blade:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 80px;
+}
+
+/* Timeline Dot */
+.cert-blade::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 217, 163, 0.2);
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(0, 217, 163, 0.5);
+    transition: all 0.4s ease;
+}
+
+.cert-blade:nth-child(odd)::before {
+    right: 0;
+}
+
+.cert-blade:nth-child(even)::before {
+    left: 0;
+}
+
+.cert-blade:hover::before {
+    background: var(--primary);
+    box-shadow: 0 0 30px rgba(0, 217, 163, 0.8);
+    transform: translateY(-50%) scale(1.3);
+}
+
+/* Connecting Line to Card */
+.cert-blade::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0, 217, 163, 0.3), transparent);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.cert-blade:nth-child(odd)::after {
+    right: 20px;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 163, 0.3));
+}
+
+.cert-blade:nth-child(even)::after {
+    left: 20px;
+    background: linear-gradient(90deg, rgba(0, 217, 163, 0.3), transparent);
+}
+
+/* Card Content */
+.blade-content {
+    position: relative;
+    background: linear-gradient(135deg, rgba(15, 18, 22, 0.95) 0%, rgba(20, 23, 28, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.blade-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 163, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.cert-blade:hover .blade-content::before {
+    left: 100%;
+}
+
+.cert-blade:hover .blade-content {
+    background: linear-gradient(135deg, rgba(18, 22, 26, 0.98) 0%, rgba(23, 27, 32, 0.98) 100%);
+    border-color: rgba(0, 217, 163, 0.2);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(0, 217, 163, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Icon */
+.blade-icon {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 217, 163, 0.08);
+    border: 2px solid rgba(0, 217, 163, 0.2);
+    border-radius: 12px;
+    font-size: 2.2rem;
+    color: var(--primary);
+    transition: all 0.4s ease;
+}
+
+.cert-blade:hover .blade-icon {
+    background: rgba(0, 217, 163, 0.12);
+    border-color: rgba(0, 217, 163, 0.4);
+    box-shadow: 0 0 20px rgba(0, 217, 163, 0.2);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Info Section */
+.blade-info {
+    flex: 1;
+}
+
+.blade-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.cert-blade:hover .blade-title {
+    color: rgba(0, 217, 163, 0.85);
+}
+
+.blade-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Status Badge */
+.blade-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: rgba(255, 107, 53, 0.08);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cert-blade:hover .blade-status {
+    background: rgba(255, 107, 53, 0.12);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+
+.status-led {
+    width: 5px;
+    height: 5px;
+    background: var(--secondary);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--secondary);
+    animation: led-blink 2s ease-in-out infinite;
+}
+
+@keyframes led-blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Arrow Link */
+.blade-link {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 217, 163, 0.08);
+    border: 1px solid rgba(0, 217, 163, 0.2);
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cert-blade:hover .blade-link {
+    background: rgba(0, 217, 163, 0.12);
+    border-color: rgba(0, 217, 163, 0.3);
+    transform: translateX(5px);
+}
+
+/* Learning Path Section */
+.learning-path {
+    margin-top: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.learning-path h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.learning-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.l-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    min-width: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.l-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 163, 0.08), transparent);
+    transition: left 0.6s ease;
+}
+
+.l-card:hover::before {
+    left: 100%;
+}
+
+.l-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 217, 163, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.l-card span {
+    display: block;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.l-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .cert-rack-container {
+        padding: 40px 10px;
+    }
+
+    .rack-frame::before {
+        left: 20px;
+    }
+
+    .cert-blade:nth-child(odd),
+    .cert-blade:nth-child(even) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 50px;
+        padding-right: 0;
+    }
+
+    .cert-blade::before {
+        left: 10px !important;
+        right: auto !important;
+    }
+
+    .cert-blade::after {
+        left: 30px !important;
+        right: auto !important;
+        background: linear-gradient(90deg, rgba(0, 217, 163, 0.3), transparent) !important;
+    }
+
+    .blade-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .blade-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .blade-title {
+        font-size: 1.2rem;
+    }
+
+    .learning-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .l-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* Entry Animations */
+.cert-blade {
+    animation: slide-in 0.6s ease backwards;
+}
+
+.cert-blade:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.cert-blade:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.cert-blade:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.cert-blade:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.cert-blade:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.cert-blade:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

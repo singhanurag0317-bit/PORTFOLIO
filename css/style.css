@@ -23,9 +23,9 @@
   /* Soft Gray */
   --glass: rgba(255, 255, 255, 0.02);
   --glass-border: rgba(255, 107, 53, 0.2);
-  --font-heading: 'Gendy', sans-serif;
-  --font-body: 'Gendy', sans-serif;
-  --font-accent: 'Gendy', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-accent: 'Space Grotesk', sans-serif;
   --font-logo: 'Gebuk', sans-serif;
 }
 

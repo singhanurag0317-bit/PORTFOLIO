@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/theme-enhancements.css">
+    <link rel="stylesheet" href="../css/skills-immersive.css">
     <link rel="stylesheet" href="../css/footer-enhanced.css">
 </head>
 
@@ -37,93 +38,166 @@
         </div>
     </nav>
 
-    <section id="skills" class="section skill-lab visible" style="margin-top: 100px;">
+    <!-- Mini Header Cat (Hanging) -->
+    <div class="header-cat">
+        <div class="cat-body">
+            <div class="cat-tail"></div>
+            <div class="cat-head">
+                <div class="cat-ear left"></div>
+                <div class="cat-ear right"></div>
+                <div class="cat-eye left"></div>
+                <div class="cat-eye right"></div>
+            </div>
+            <div class="cat-paw left"></div>
+            <div class="cat-paw right"></div>
+        </div>
+    </div>
+
+    <!-- Neural Tech Tree Section -->
+    <section id="skills" class="neural-section">
+        <div class="neural-bg"></div>
+
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title gradient-text">Technical Arsenal</h2>
-                <p>The tools and technologies I use to bring ideas to life.</p>
+            <div class="tech-header">
+                <h2 class="tech-title">Neural Network</h2>
+                <span class="tech-subtitle">SYSTEM_CAPABILITIES_MANIFEST</span>
             </div>
 
-            <div class="skills-grid">
-                <!-- Frontend Deck -->
-                <div class="skill-category-card reveal">
-                    <div class="card-header">
-                        <i class="fa-solid fa-code"></i>
-                        <h3>Frontend & UI</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-tag" data-color="#e34c26">
-                            <i class="fa-brands fa-html5"></i>
-                            <span>HTML5</span>
+            <div class="neural-container">
+
+                <!-- Cluster 1: Frontend -->
+                <div class="tech-cluster">
+                    <span class="cluster-label">INTERFACE_LAYER</span>
+
+                    <div class="node-grid">
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-react node-icon"></i>
+                            <span class="node-name">React.js</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 90%;"></div>
+                            </div>
+                            <span class="node-pct">90%</span>
                         </div>
-                        <div class="skill-tag" data-color="#264de4">
-                            <i class="fa-brands fa-css3-alt"></i>
-                            <span>CSS3</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-js node-icon"></i>
+                            <span class="node-name">JavaScript</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 85%;"></div>
+                            </div>
+                            <span class="node-pct">85%</span>
                         </div>
-                        <div class="skill-tag" data-color="#f0db4f">
-                            <i class="fa-brands fa-js"></i>
-                            <span>JavaScript</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-html5 node-icon"></i>
+                            <span class="node-name">HTML5</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 95%;"></div>
+                            </div>
+                            <span class="node-pct">95%</span>
                         </div>
-                        <div class="skill-tag" data-color="#61dbfb">
-                            <i class="fa-brands fa-react"></i>
-                            <span>React.js</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-css3-alt node-icon"></i>
+                            <span class="node-name">CSS3</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 90%;"></div>
+                            </div>
+                            <span class="node-pct">90%</span>
                         </div>
-                        <div class="skill-tag" data-color="#38bdf8">
-                            <i class="fa-solid fa-wind"></i>
-                            <span>Tailwind (Basics)</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-solid fa-wind node-icon"></i>
+                            <span class="node-name">Tailwind</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 80%;"></div>
+                            </div>
+                            <span class="node-pct">80%</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Backend & Tools -->
-                <div class="skill-category-card reveal" style="transition-delay: 0.1s;">
-                    <div class="card-header">
-                        <i class="fa-solid fa-server"></i>
-                        <h3>Backend & Core</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-tag" data-color="#68a063">
-                            <i class="fa-brands fa-node-js"></i>
-                            <span>Node.js</span>
+                <!-- Cluster 2: Backend -->
+                <div class="tech-cluster">
+                    <span class="cluster-label">CORE_PROCESSING</span>
+
+                    <div class="node-grid">
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-node-js node-icon"></i>
+                            <span class="node-name">Node.js</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 80%;"></div>
+                            </div>
+                            <span class="node-pct">80%</span>
                         </div>
-                        <div class="skill-tag" data-color="#f89820">
-                            <i class="fa-brands fa-java"></i>
-                            <span>Java</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-java node-icon"></i>
+                            <span class="node-name">Java</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 75%;"></div>
+                            </div>
+                            <span class="node-pct">75%</span>
                         </div>
-                        <div class="skill-tag" data-color="#000000">
-                            <i class="fa-brands fa-github"></i>
-                            <span>Git/GitHub</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-python node-icon"></i>
+                            <span class="node-name">Python</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 70%;"></div>
+                            </div>
+                            <span class="node-pct">70%</span>
                         </div>
-                        <div class="skill-tag" data-color="#ff6c37">
-                            <i class="fa-solid fa-envelope-open-text"></i>
-                            <span>Postman</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-solid fa-database node-icon"></i>
+                            <span class="node-name">MongoDB</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 75%;"></div>
+                            </div>
+                            <span class="node-pct">75%</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Soft Skills -->
-                <div class="skill-category-card reveal" style="transition-delay: 0.2s;">
-                    <div class="card-header">
-                        <i class="fa-solid fa-users-viewfinder"></i>
-                        <h3>Professional</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-tag" data-color="#f43f5e">
-                            <i class="fa-solid fa-brain"></i>
-                            <span>Problem Solving</span>
+                <!-- Cluster 3: Tools & Pro -->
+                <div class="tech-cluster">
+                    <span class="cluster-label">AUXILIARY_SYSTEMS</span>
+
+                    <div class="node-grid">
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-github node-icon"></i>
+                            <span class="node-name">Git/GitHub</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 85%;"></div>
+                            </div>
+                            <span class="node-pct">85%</span>
                         </div>
-                        <div class="skill-tag" data-color="#a78bfa">
-                            <i class="fa-solid fa-people-group"></i>
-                            <span>Teamwork</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-solid fa-envelope-open-text node-icon"></i>
+                            <span class="node-name">Postman</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 80%;"></div>
+                            </div>
+                            <span class="node-pct">80%</span>
                         </div>
-                        <div class="skill-tag" data-color="#34d399">
-                            <i class="fa-solid fa-magnifying-glass-chart"></i>
-                            <span>Analysis</span>
+                        <!-- Node -->
+                        <div class="skill-node">
+                            <i class="fa-brands fa-figma node-icon"></i>
+                            <span class="node-name">Figma</span>
+                            <div class="node-power">
+                                <div class="power-level" style="width: 70%;"></div>
+                            </div>
+                            <span class="node-pct">70%</span>
                         </div>
                     </div>
                 </div>
+
             </div>
-
         </div>
     </section>
 
@@ -193,11 +267,13 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com" target="_blank">anuragjadon0317@gmail.com</a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com"
+                                target="_blank">anuragjadon0317@gmail.com</a>
                         </li>
                         <li>
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..." target="_blank">+91 85320 91012</a>
+                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..."
+                                target="_blank">+91 85320 91012</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
@@ -224,6 +300,19 @@
 
     <script src="../script.js"></script>
 
+    <script>
+        // Simple animation for power bars on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.power-level');
+            bars.forEach(bar => {
+                let width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+    </script>
 </body>
 
 </html>

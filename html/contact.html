@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/theme-enhancements.css">
+    <link rel="stylesheet" href="../css/contact-premium.css">
     <link rel="stylesheet" href="../css/footer-enhanced.css">
 </head>
 
@@ -26,7 +27,6 @@
             <i class="fas fa-bars"></i>
         </div>
 
-
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -37,61 +37,146 @@
         </div>
     </nav>
 
-    <section id="contact" class="section visible" style="margin-top: 100px;">
-        <h2 class="section-title gradient-text">Contact Me</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
 
-        <div class="contact-wrapper">
-
-            <!-- Contact Form -->
-            <form class="contact-form" action="https://formsubmit.co/7a41ceb9fada0b818acd10ed3315869b" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="email" name="email" placeholder="Your Email" required />
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <!-- Honeyport to prevent spam -->
-                <input type="text" name="_honey" style="display:none">
-                <!-- Disable captcha for cleaner flow -->
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- Animated Orb -->
-            <div class="orb-container">
-                <div class="orb"></div>
-
-                <span class="skill s1">HTML</span>
-                <span class="skill s2">CSS</span>
-                <span class="skill s3">JS</span>
-                <span class="skill s4">React</span>
-                <span class="skill s5">Java</span>
-            </div>
-
+        <!-- Floating Particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
         </div>
 
-        <!-- Enhanced Content: Quick Connect -->
-        <div class="quick-connect" style="margin-top: 80px; text-align: center;">
-            <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 20px;">Prefer a direct channel?</p>
+        <div class="contact-container">
 
-            <div class="connect-options" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <!-- Header -->
+            <div class="contact-header">
+                <h1 class="contact-title">Let's Work Together</h1>
+                <p class="contact-subtitle">Have a project in mind? I'm available for freelance work and full-time
+                    opportunities.</p>
+            </div>
 
-                <div class="option">
-                    <i class="fa-solid fa-envelope"
-                        style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p style="color: #fff;">anuragjadon0317@gmail.com</p>
+            <div class="contact-grid">
+
+                <!-- Contact Form -->
+                <div class="form-wrapper">
+                    <form id="contactForm" class="contact-form"
+                        action="https://formsubmit.co/7a41ceb9fada0b818acd10ed3315869b" method="POST">
+
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next"
+                            value="https://singhanurag0317-bit.github.io/PORTFOLIO/html/contact.html?success=true">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..."
+                                required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
+
+                        <!-- Success/Error Messages -->
+                        <div class="form-message success-message" id="successMessage" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Message sent successfully! I'll get back to you soon.</p>
+                        </div>
+                        <div class="form-message error-message-box" id="errorMessage" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Something went wrong. Please try again or contact me directly.</p>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="option">
-                    <i class="fa-solid fa-location-dot"
-                        style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p style="color: #fff;">Uttar Pradesh, India (Remote Available)</p>
+                <!-- Contact Info Sidebar -->
+                <div class="contact-info">
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:anuragjadon0317@gmail.com">anuragjadon0317@gmail.com</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..."
+                            target="_blank">+91 85320 91012</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Mathura, India</p>
+                        <span class="availability">Remote Available</span>
+                    </div>
+
+                    <div class="info-card social-card">
+                        <h3>Connect With Me</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/singhanurag0317-bit" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anurag-jadon-121733238/" target="_blank"
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://leetcode.com/u/Anurag151206/" target="_blank" aria-label="LeetCode">
+                                <i class="fas fa-code"></i>
+                            </a>
+                            <a href="https://x.com/Anurag_jadon15" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/anurag_jadon15/" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
+
         </div>
     </section>
 
-
     <!-- Footer -->
-    <!-- Enhanced Footer -->
     <footer id="contact-footer">
         <div class="footer-content">
             <div class="footer-grid">
@@ -156,11 +241,13 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com" target="_blank">anuragjadon0317@gmail.com</a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com"
+                                target="_blank">anuragjadon0317@gmail.com</a>
                         </li>
                         <li>
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..." target="_blank">+91 85320 91012</a>
+                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..."
+                                target="_blank">+91 85320 91012</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
@@ -182,10 +269,69 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
     <script src="../script.js"></script>
+
+    <script>
+        // Check for success parameter in URL
+        window.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                document.getElementById('successMessage').style.display = 'flex';
+                // Clear the URL parameter
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+
+        // Form validation and submission handling
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            let isValid = true;
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+            // Validate name
+            const name = document.getElementById('name').value.trim();
+            if (name.length < 2) {
+                document.getElementById('nameError').textContent = 'Please enter a valid name';
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+                isValid = false;
+            }
+
+            // Validate subject
+            const subject = document.getElementById('subject').value.trim();
+            if (subject.length < 3) {
+                document.getElementById('subjectError').textContent = 'Subject is too short';
+                isValid = false;
+            }
+
+            // Validate message
+            const message = document.getElementById('message').value.trim();
+            if (message.length < 10) {
+                document.getElementById('messageError').textContent = 'Message must be at least 10 characters';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Show loading state
+            document.querySelector('.btn-text').style.display = 'none';
+            document.querySelector('.btn-loader').style.display = 'inline';
+            document.querySelector('.submit-btn').disabled = true;
+        });
+    </script>
 </body>
 
 </html>

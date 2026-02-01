@@ -7,11 +7,12 @@
     <title>Projects | Anurag Singh</title>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/theme-enhancements.css">
+    <link rel="stylesheet" href="../css/projects-immersive.css">
     <link rel="stylesheet" href="../css/footer-enhanced.css">
 </head>
 
@@ -26,7 +27,6 @@
             <i class="fas fa-bars"></i>
         </div>
 
-
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -37,154 +37,243 @@
         </div>
     </nav>
 
-    <section id="projects" class="section projects-section visible" style="margin-top: 100px;">
-        <div class="container">
+    <!-- Terminal Grid Projects Section -->
+    <section id="projects" class="projects-immersive-section">
 
-            <div class="section-header">
-                <h2 class="section-title gradient-text">Projects</h2>
-                <p>Selected builds focused on clarity, logic, and clean execution.</p>
+        <div class="projects-container">
+
+            <!-- Terminal Header -->
+            <div class="terminal-header">
+                <div class="terminal-prompt">$ ls -la /projects/featured</div>
+                <h1 class="terminal-title">Featured Projects</h1>
+                <p class="terminal-subtitle">A collection of full-stack applications showcasing modern web technologies
+                    and clean architecture</p>
             </div>
 
-            <div class="projects-wrapper">
+            <!-- Projects Grid -->
+            <div class="projects-grid">
 
-                <!-- Project 01: Noctra Tech -->
-                <div class="project-row">
-                    <div class="project-info">
-                        <span class="project-index">01</span>
-                        <h3>Noctra Tech</h3>
-                        <p>
-                            An innovative tech solutions platform delivering distinct web experiences and digital
-                            services.
-                        </p>
-
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.noctratech.me" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
-                            </a>
+                <!-- Project 1: Noctra Tech -->
+                <article class="project-card">
+                    <div class="card-header">
+                        <span class="card-number">[001]</span>
+                        <div class="card-status status-live">
+                            <span class="status-dot"></span>
+                            LIVE
                         </div>
                     </div>
-
-                    <div class="project-visual">
+                    <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                             alt="Noctra Tech">
                     </div>
-                </div>
-
-                <!-- Project 01: Smart Dashboard -->
-                <div class="project-row">
-                    <div class="project-info">
-                        <span class="project-index">02</span>
-                        <h3>Smart Dashboard</h3>
-                        <p>
-                            A smart dashboard implementation focused on data visualization and user experience.
+                    <div class="card-body">
+                        <div class="card-category">Enterprise Platform</div>
+                        <h3 class="card-title">Noctra Tech</h3>
+                        <p class="card-description">
+                            A comprehensive digital transformation platform built for high-performance enterprise needs
+                            with secure authentication and real-time processing.
                         </p>
-
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                        <div class="tech-stack">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">JWT</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://smart-dashboard-alpha.vercel.app/" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                        <div class="card-actions">
+                            <a href="https://www.noctratech.me" target="_blank" class="action-btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> View Live
                             </a>
-                            <a href="https://github.com/singhanurag0317-bit/Smart-Dashboard" target="_blank">
-                                <i class="fa-brands fa-github"></i> Code
+                            <a href="https://github.com/singhanurag0317-bit" target="_blank"
+                                class="action-btn btn-secondary">
+                                <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                     </div>
+                </article>
 
-                    <div class="project-visual">
+                <!-- Project 2: Smart Dashboard -->
+                <article class="project-card">
+                    <div class="card-header">
+                        <span class="card-number">[002]</span>
+                        <div class="card-status status-dev">
+                            <span class="status-dot"></span>
+                            ALPHA
+                        </div>
+                    </div>
+                    <div class="card-image">
                         <img src="https://img.freepik.com/free-vector/infographic-dashboard-user-panel_52683-30026.jpg?semt=ais_hybrid&w=740&q=80"
                             alt="Smart Dashboard">
                     </div>
-                </div>
-
-                <!-- Project 03: Decision Maker -->
-                <div class="project-row reverse">
-                    <div class="project-info">
-                        <span class="project-index">03</span>
-                        <h3>Decision Maker</h3>
-                        <p>
-                            An interactive tool designed to assist in making informed decisions efficiently.
+                    <div class="card-body">
+                        <div class="card-category">Data Analytics</div>
+                        <h3 class="card-title">Smart Dashboard</h3>
+                        <p class="card-description">
+                            Interactive analytics interface transforming raw data into actionable insights with
+                            responsive charting and modern CSS Grid layouts.
                         </p>
-
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Chart.js</span>
                         </div>
-
-                        <div class="project-links">
-                            <a href="https://decision-maker-five.vercel.app/" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                        <div class="card-actions">
+                            <a href="https://smart-dashboard-alpha.vercel.app/" target="_blank"
+                                class="action-btn btn-primary">
+                                <i class="fas fa-play"></i> Demo
                             </a>
-                            <a href="https://github.com/singhanurag0317-bit/Decision_Maker.git" target="_blank">
-                                <i class="fa-brands fa-github"></i> Code
+                            <a href="https://github.com/singhanurag0317-bit/Smart-Dashboard" target="_blank"
+                                class="action-btn btn-secondary">
+                                <i class="fab fa-github"></i> Code
                             </a>
                         </div>
-
                     </div>
-                    <div class="project-visual">
+                </article>
+
+                <!-- Project 3: Decision Maker -->
+                <article class="project-card">
+                    <div class="card-header">
+                        <span class="card-number">[003]</span>
+                        <div class="card-status status-live">
+                            <span class="status-dot"></span>
+                            LIVE
+                        </div>
+                    </div>
+                    <div class="card-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjDwQZh2-N_YAQTv5fkPj3MKmWXlNl_bDp_w&s"
                             alt="Decision Maker">
                     </div>
-                </div>
-
-                <!-- Project 04: To-Do List -->
-                <div class="project-row">
-                    <div class="project-info">
-                        <span class="project-index">04</span>
-                        <h3>To-Do List</h3>
-                        <p>
-                            Interactive and simple, advance To-do list in which you can edit and delete tasks.
+                    <div class="card-body">
+                        <div class="card-category">Utility Tool</div>
+                        <h3 class="card-title">Decision Maker</h3>
+                        <p class="card-description">
+                            Logic-based utility assisting users in making complex choices through weighted algorithmic
+                            processing and multi-step decision trees.
                         </p>
-
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                        <div class="tech-stack">
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Algorithms</span>
+                            <span class="tech-badge">UI/UX</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                        <div class="card-actions">
+                            <a href="https://decision-maker-five.vercel.app/" target="_blank"
+                                class="action-btn btn-primary">
+                                <i class="fas fa-bolt"></i> Launch
+                            </a>
+                            <a href="https://github.com/singhanurag0317-bit/Decision_Maker.git" target="_blank"
+                                class="action-btn btn-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Task Manager -->
+                <article class="project-card">
+                    <div class="card-header">
+                        <span class="card-number">[004]</span>
+                        <div class="card-status status-dev">
+                            <span class="status-dot"></span>
+                            UPDATE
+                        </div>
+                    </div>
+                    <div class="card-image">
+                        <img src="https://www.shutterstock.com/image-photo/handwritten-do-list-on-notebook-600nw-2461186223.jpg"
+                            alt="Task Manager">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Productivity</div>
+                        <h3 class="card-title">Task Manager</h3>
+                        <p class="card-description">
+                            Persistent task management system leveraging local storage for data retention with full CRUD
+                            operations and categorization.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">DOM API</span>
+                            <span class="tech-badge">LocalStorage</span>
+                            <span class="tech-badge">CSS3</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="action-btn btn-primary" style="opacity: 0.5; cursor: default;">
+                                <i class="fas fa-wrench"></i> Maintenance
                             </a>
                             <a href="https://github.com/singhanurag0317-bit/TASKS/ASSIGNMENT-TASKS/To-Do%20list"
-                                target="_blank">
-                                <i class="fa-brands fa-github"></i> Code
+                                target="_blank" class="action-btn btn-secondary">
+                                <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                     </div>
+                </article>
 
-                    <div class="project-visual">
-                        <img src="https://www.shutterstock.com/image-photo/handwritten-do-list-on-notebook-600nw-2461186223.jpg"
-                            alt="to-do list">
+                <!-- Project 5: Classified -->
+                <article class="project-card classified">
+                    <div class="card-header">
+                        <span class="card-number">[005]</span>
+                        <div class="card-status status-classified">
+                            <span class="status-dot"></span>
+                            CLASSIFIED
+                        </div>
                     </div>
-                </div>
+                    <div class="card-image">
+                        <img src="https://img.freepik.com/free-photo/black-texture_1203-272.jpg" alt="Classified">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Confidential</div>
+                        <h3 class="card-title">Project Stealth</h3>
+                        <p class="card-description">
+                            [REDACTED] High-security application under NDA. Features advanced encryption and real-time
+                            secure communication protocols.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Security</span>
+                            <span class="tech-badge">Crypto</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="action-btn btn-primary">
+                                <i class="fas fa-lock"></i> Restricted
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6: In Development -->
+                <article class="project-card classified">
+                    <div class="card-header">
+                        <span class="card-number">[006]</span>
+                        <div class="card-status status-classified">
+                            <span class="status-dot"></span>
+                            PENDING
+                        </div>
+                    </div>
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+                            alt="Orbital Net">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">R&D</div>
+                        <h3 class="card-title">Orbital Net</h3>
+                        <p class="card-description">
+                            Global communication relay system simulation. Currently in initial architecture phase.
+                            Expected release Q4 2025.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Socket.io</span>
+                            <span class="tech-badge">WebGL</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="action-btn btn-primary">
+                                <i class="fas fa-hourglass-half"></i> In Progress
+                            </span>
+                        </div>
+                    </div>
+                </article>
 
             </div>
 
-            <!-- Enhanced Content: Future Plans -->
-            <div class="future-projects"
-                style="margin-top: 100px; padding: 40px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px dashed rgba(255,255,255,0.1); text-align: center;">
-                <h3 style="color: #fff; margin-bottom: 15px;">In the Pipeline</h3>
-                <p style="color: var(--muted); margin-bottom: 0;">
-                    Currently conceptualizing a <strong style="color: var(--primary);">Full-Stack E-commerce
-                        Platform</strong>
-                    and a <strong style="color: var(--secondary);">Personal Productivity App</strong> focused on minimal
-                    habits.
-                </p>
-            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <!-- Enhanced Footer -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-grid">
@@ -249,11 +338,13 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com" target="_blank">anuragjadon0317@gmail.com</a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com"
+                                target="_blank">anuragjadon0317@gmail.com</a>
                         </li>
                         <li>
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..." target="_blank">+91 85320 91012</a>
+                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..."
+                                target="_blank">+91 85320 91012</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
@@ -275,9 +366,9 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
     <script src="../script.js"></script>
 </body>
 

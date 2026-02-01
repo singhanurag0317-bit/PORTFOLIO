@@ -1,0 +1,389 @@
+/* ===== About Page Redesign (System Blueprint) ===== */
+
+/* Base Layout & Blueprint Background */
+.about-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(90deg, transparent 19%, rgba(255, 255, 255, 0.03) 20%, transparent 20%),
+        linear-gradient(transparent 19%, rgba(255, 255, 255, 0.03) 20%, transparent 20%);
+    background-size: 100px 100px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.about-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    opacity: 0.3;
+    animation: scan-vertical 8s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes scan-vertical {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.blueprint-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 60px;
+    min-height: 80vh;
+}
+
+/* Vertical Dividers for Gaps */
+.blueprint-container::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 330px;
+    /* Center of first gap (300px col + 30px half-gap) */
+    width: 1px;
+    background: repeating-linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1) 0px,
+            rgba(255, 255, 255, 0.1) 5px,
+            transparent 5px,
+            transparent 15px);
+}
+
+.blueprint-container::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    right: 330px;
+    /* Center of last gap */
+    width: 1px;
+    background: repeating-linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1) 0px,
+            rgba(255, 255, 255, 0.1) 5px,
+            transparent 5px,
+            transparent 15px);
+}
+
+/* Typography & General */
+.tech-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    display: block;
+    opacity: 0.8;
+}
+
+.tech-heading {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+    position: relative;
+    display: inline-block;
+}
+
+.tech-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-family: var(--font-body);
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* === Layout Sections === */
+
+/* Left Column: Quick Stats (HUD Style) */
+.blueprint-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    border-right: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-right: 30px;
+    padding-top: 40px;
+}
+
+.hud-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hud-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.1);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    font-family: var(--font-heading);
+}
+
+.hud-subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.hud-role {
+    font-family: 'Courier New', monospace;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.stat-block {
+    margin-bottom: 30px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Center Column: Main Story */
+.blueprint-main {
+    padding-top: 40px;
+    position: relative;
+}
+
+.story-section {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+/* Decorative corner markers for sections */
+.marker-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--secondary);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.marker-corner.top-left {
+    top: -10px;
+    left: -10px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.marker-corner.bottom-right {
+    bottom: -10px;
+    right: -10px;
+    border-top: none;
+    border-left: none;
+}
+
+.story-section:hover .marker-corner {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background: rgba(0, 217, 163, 0.05);
+}
+
+/* Journey Line (Schematic Style) */
+.schematic-journey {
+    position: relative;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schematic-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.schematic-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    width: 40px;
+    height: 1px;
+    background: var(--secondary);
+}
+
+.schematic-item::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background: var(--bg);
+    border: 1px solid var(--secondary);
+    border-radius: 50%;
+}
+
+.schematic-year {
+    font-family: 'Courier New', monospace;
+    color: var(--primary);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.schematic-title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Right Column: Interests & Details */
+.blueprint-details {
+    padding-top: 40px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Interests Grid */
+.interests-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.interest-node {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.interest-node:hover {
+    padding-left: 20px;
+    border-color: var(--primary);
+}
+
+.interest-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--text-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.interest-node:hover .interest-icon {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.interest-name {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .blueprint-container {
+        grid-template-columns: 250px 1fr;
+        padding: 0 20px;
+    }
+
+    .blueprint-container::after {
+        display: none;
+    }
+
+    .blueprint-container::before {
+        left: 280px;
+    }
+
+    .blueprint-details {
+        grid-column: 1 / -1;
+        border-left: none;
+        border-top: 1px dashed rgba(255, 255, 255, 0.1);
+        padding-left: 0;
+        padding-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .blueprint-container {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .blueprint-container::before,
+    .blueprint-container::after {
+        display: none;
+    }
+
+    .blueprint-sidebar {
+        border-right: none;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        padding-right: 0;
+        padding-bottom: 40px;
+    }
+
+    .hud-title {
+        font-size: 3rem;
+    }
+
+    .blueprint-details {
+        grid-template-columns: 1fr;
+    }
+}

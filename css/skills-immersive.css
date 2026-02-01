@@ -1,0 +1,353 @@
+/* ===== Skills Page: Neural Tech Tree ===== */
+
+/* Section Setup */
+.neural-section {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    background-color: var(--bg);
+    position: relative;
+    overflow: hidden;
+    /* Neural Network Background Pattern - Mixed Orange/Green hints */
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(20, 20, 20, 1), transparent 25%),
+        radial-gradient(circle at 85% 50%, rgba(20, 20, 20, 1), transparent 25%);
+}
+
+/* Removed the heavy green scanner flash (.neural-section::after) as requested */
+
+/* Animated Background Mesh - Toned down, mixed colors */
+.neural-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle mixed gradient grid */
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba(255, 107, 53, 0.03) 25%, rgba(255, 107, 53, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 217, 163, 0.03) 75%, rgba(0, 217, 163, 0.03) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 107, 53, 0.03) 25%, rgba(255, 107, 53, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 217, 163, 0.03) 75%, rgba(0, 217, 163, 0.03) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+    z-index: 1;
+    pointer-events: none;
+    animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+    0% {
+        transform: perspective(500px) rotateX(20deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(20deg) translateY(50px);
+    }
+}
+
+/* Header */
+.tech-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.tech-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    /* Orange Glow Shadow */
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
+    font-family: var(--font-heading);
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.tech-title::before {
+    content: 'Neural Network';
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 var(--secondary);
+    /* Green glitch offset */
+    top: 0;
+    color: white;
+    background: var(--bg);
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch-title 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-title {
+    0% {
+        clip: rect(44px, 9999px, 56px, 0);
+    }
+
+    5% {
+        clip: rect(32px, 9999px, 34px, 0);
+    }
+
+    10% {
+        clip: rect(12px, 9999px, 5px, 0);
+    }
+
+    15% {
+        clip: rect(42px, 9999px, 14px, 0);
+    }
+
+    20% {
+        clip: rect(12px, 9999px, 34px, 0);
+    }
+
+    100% {
+        clip: rect(11px, 9999px, 22px, 0);
+    }
+}
+
+.tech-subtitle {
+    font-family: 'Courier New', monospace;
+    color: var(--primary);
+    /* Orange text */
+    font-size: 0.9rem;
+    background: rgba(255, 107, 53, 0.1);
+    padding: 5px 15px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px dashed rgba(255, 107, 53, 0.3);
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.1);
+}
+
+/* Main Layout */
+.neural-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 0 40px;
+}
+
+/* Cluster (Category) */
+.tech-cluster {
+    position: relative;
+    padding-left: 40px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    /* Neutral line */
+}
+
+.tech-cluster::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    background: var(--bg);
+    border: 2px solid var(--primary);
+    /* Orange Dot */
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary);
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+    }
+}
+
+.cluster-label {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-family: 'Courier New', monospace;
+    color: var(--secondary);
+    /* Keep label green for contrast */
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(0, 217, 163, 0.5);
+    background: var(--bg);
+    padding-right: 10px;
+}
+
+/* Grid for Nodes */
+.node-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+}
+
+/* Skill Node */
+.skill-node {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Subtle white border default */
+    border-radius: 4px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(5px);
+    cursor: crosshair;
+    clip-path: polygon(10px 0, 100% 0,
+            100% calc(100% - 10px), calc(100% - 10px) 100%,
+            0 100%, 0 10px);
+}
+
+.skill-node:hover {
+    transform: translateY(-5px) scale(1.05);
+    /* Orange Hover Border */
+    border-color: var(--primary);
+    box-shadow:
+        0 0 20px rgba(255, 107, 53, 0.2),
+        inset 0 0 10px rgba(255, 107, 53, 0.1);
+    z-index: 11;
+    animation: node-shake 0.4s ease-in-out;
+}
+
+@keyframes node-shake {
+
+    0%,
+    100% {
+        transform: translateY(-5px) scale(1.05) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-5px) scale(1.05) rotate(1deg);
+    }
+
+    75% {
+        transform: translateY(-5px) scale(1.05) rotate(-1deg);
+    }
+}
+
+.skill-node::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Orange top line scan */
+    background: var(--primary);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.skill-node:hover::before {
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+.node-icon {
+    font-size: 2.5rem;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.skill-node:hover .node-icon {
+    color: #fff;
+    /* Orange glow on icon */
+    filter: drop-shadow(0 0 8px var(--primary));
+    transform: scale(1.1);
+}
+
+.node-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+/* Power Level Bar */
+.node-power {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mixed Colors for Power Bars via child selection or classes could be cool, 
+   but for now let's set a default orange-to-green gradient or just Orange */
+.power-level {
+    height: 100%;
+    /* Gradient from Orange to Green */
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    width: 0%;
+    transition: width 1.5s ease-out;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
+}
+
+.skill-node:hover .power-level {
+    filter: brightness(1.5);
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.node-pct {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    align-self: flex-end;
+}
+
+/* Decorative Connectors */
+.connector-line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+}
+
+/* Floating bits - Orange and Green */
+.data-bit {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float-bit 4s infinite;
+}
+
+@keyframes float-bit {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .node-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-title {
+        font-size: 2.5rem;
+    }
+
+    .tech-cluster {
+        padding-left: 20px;
+    }
+}

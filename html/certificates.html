@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/theme-enhancements.css">
+    <link rel="stylesheet" href="../css/certificates-rack.css">
     <link rel="stylesheet" href="../css/footer-enhanced.css">
 </head>
 
@@ -37,118 +38,151 @@
         </div>
     </nav>
 
-    <section id="certificates" class="section certificates visible" style="margin-top: 0;">
+    <!-- Mini Header Cat (Hanging) -->
+    <div class="header-cat">
+        <div class="cat-body">
+            <div class="cat-tail"></div>
+            <div class="cat-head">
+                <div class="cat-ear left"></div>
+                <div class="cat-ear right"></div>
+                <div class="cat-eye left"></div>
+                <div class="cat-eye right"></div>
+            </div>
+            <div class="cat-paw left"></div>
+            <div class="cat-paw right"></div>
+        </div>
+    </div>
+
+    <section id="certificates" class="section certificates visible">
         <h2 class="section-title gradient-text">Certifications & Proof of Work</h2>
 
-        <div class="cert-track">
-
-            <!-- HTML -->
-            <div class="cert reveal">
-                <div class="cert-content html-cert">
-                    <div class="cert-img-box">
-                        <a href="assets/html.pdf" class="cert-link" target="_blank" aria-label="View HTML certificate">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4tZWVFCDi-UBtRvugXE-AcaDj-dx6QPRChw&s"
-                                alt="HTML Certificate">
-                            <span class="cert-btn">View certificate</span>
-                        </a>
-                    </div>
-                    <div class="cert-details">
-                        <h3>HTML5 Mastery</h3>
-                        <p>Advanced structural implementation & semantic markup.</p>
+        <div class="cert-rack-container">
+            <div class="rack-frame">
+                <!-- Rack Header -->
+                <div class="rack-header">
+                    <div class="rack-title">Server Rack - Credentials</div>
+                    <div class="rack-status">
+                        <span class="status-indicator"></span>
+                        <span>ONLINE</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- CSS -->
-            <div class="cert reveal">
-                <div class="cert-content css-cert">
-                    <div class="cert-img-box">
-                        <a href="assets/css.pdf" class="cert-link" target="_blank" aria-label="View CSS certificate">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH-oIAvcVSDEN54K4XFbmUAynW9xva-dQ0g&s"
-                                alt="CSS Certificate">
-                            <span class="cert-btn">View certificate</span>
-                        </a>
+                <!-- Certificate Blade 1: HTML5 -->
+                <a href="assets/html.pdf" target="_blank" class="cert-blade">
+                    <div class="blade-content">
+                        <div class="blade-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="blade-info">
+                            <h3 class="blade-title">HTML5 Mastery</h3>
+                            <p class="blade-description">Advanced structural implementation & semantic markup.</p>
+                        </div>
+                        <div class="blade-status">
+                            <span class="status-led"></span>
+                            <span>Verified</span>
+                        </div>
+                        <div class="blade-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
-                    <div class="cert-details">
-                        <h3>CSS3 Styling</h3>
-                        <p>Responsive design, animations, and modern layouts.</p>
-                    </div>
-                </div>
-            </div>
+                </a>
 
-            <!-- Bootstrap -->
-            <div class="cert reveal">
-                <div class="cert-content bs-cert">
-                    <div class="cert-img-box">
-                        <a href="assets/bootstrap.pdf" class="cert-link" target="_blank"
-                            aria-label="View Bootstrap certificate">
-                            <img src="https://www.tutorialrepublic.com/lib/images/bootstrap-5.0-illustration.png"
-                                alt="Bootstrap Certificate">
-                            <span class="cert-btn">View certificate</span>
-                        </a>
+                <!-- Certificate Blade 2: CSS3 -->
+                <a href="assets/css.pdf" target="_blank" class="cert-blade">
+                    <div class="blade-content">
+                        <div class="blade-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="blade-info">
+                            <h3 class="blade-title">CSS3 Styling</h3>
+                            <p class="blade-description">Responsive design, animations, and modern layouts.</p>
+                        </div>
+                        <div class="blade-status">
+                            <span class="status-led"></span>
+                            <span>Verified</span>
+                        </div>
+                        <div class="blade-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
-                    <div class="cert-details">
-                        <h3>Bootstrap 5</h3>
-                        <p>Rapid responsive development & component usage.</p>
-                    </div>
-                </div>
-            </div>
+                </a>
 
-            <!-- JS -->
-            <div class="cert reveal">
-                <div class="cert-content js-cert">
-                    <div class="cert-img-box">
-                        <a href="assets/js.pdf" class="cert-link" target="_blank"
-                            aria-label="View JavaScript certificate">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1DmLCy9PSJfFqO55mNTYOQLx3x8THsbokkw&s"
-                                alt="JavaScript Certificate">
-                            <span class="cert-btn">View certificate</span>
-                        </a>
+                <!-- Certificate Blade 3: Bootstrap -->
+                <a href="assets/bootstrap.pdf" target="_blank" class="cert-blade">
+                    <div class="blade-content">
+                        <div class="blade-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <div class="blade-info">
+                            <h3 class="blade-title">Bootstrap 5</h3>
+                            <p class="blade-description">Rapid responsive development & component usage.</p>
+                        </div>
+                        <div class="blade-status">
+                            <span class="status-led"></span>
+                            <span>Verified</span>
+                        </div>
+                        <div class="blade-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
-                    <div class="cert-details">
-                        <h3>JavaScript ES6+</h3>
-                        <p>Dynamic functional programming & DOM manipulation.</p>
-                    </div>
-                </div>
-            </div>
+                </a>
 
-            <!-- deloit certificate -->
-            <div class="cert reveal">
-                <div class="cert-content deloitte">
-                    <div class="cert-img-box">
-                        <a href="assets/Deloitte Certificate.pdf" class="cert-link" target="_blank"
-                            aria-label="View Deloitte certificate">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3g2ofzGFk2-bkrKO9eOC0T1sCStAIZyasJg&s"
-                                alt="Deloitte Certificate">
-                            <span class="cert-btn">View certificate</span>
-                        </a>
+                <!-- Certificate Blade 4: JavaScript -->
+                <a href="assets/js.pdf" target="_blank" class="cert-blade">
+                    <div class="blade-content">
+                        <div class="blade-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="blade-info">
+                            <h3 class="blade-title">JavaScript ES6+</h3>
+                            <p class="blade-description">Dynamic functional programming & DOM manipulation.</p>
+                        </div>
+                        <div class="blade-status">
+                            <span class="status-led"></span>
+                            <span>Verified</span>
+                        </div>
+                        <div class="blade-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
-                    <div class="cert-details">
-                        <h3>Deloitte Certificate</h3>
-                        <p>Development in coding and software created projects.</p>
+                </a>
 
+                <!-- Certificate Blade 5: Deloitte -->
+                <a href="assets/Deloitte Certificate.pdf" target="_blank" class="cert-blade">
+                    <div class="blade-content">
+                        <div class="blade-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="blade-info">
+                            <h3 class="blade-title">Deloitte Certificate</h3>
+                            <p class="blade-description">Development in coding and software created projects.</p>
+                        </div>
+                        <div class="blade-status">
+                            <span class="status-led"></span>
+                            <span>Verified</span>
+                        </div>
+                        <div class="blade-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
         </div>
 
         <!-- Enhanced Content: Active Learning -->
-        <div class="learning-path" style="margin-top: 100px; text-align: center;">
-            <h3 style="color: #fff; margin-bottom: 20px;">Currently Exploring</h3>
-            <div class="learning-cards" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div class="learning-path">
+            <h3>Currently Exploring</h3>
+            <div class="learning-cards">
 
-                <div class="l-card"
-                    style="background: rgba(255,255,255,0.03); padding: 20px 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <span style="color: var(--secondary); font-weight: 600;">Next.js</span>
-                    <p style="color: var(--muted); font-size: 0.9rem; margin-top: 5px;">Server-side rendering &
-                        optimized routing</p>
+                <div class="l-card">
+                    <span>Next.js</span>
+                    <p>Server-side rendering & optimized routing</p>
                 </div>
 
-                <div class="l-card"
-                    style="background: rgba(255,255,255,0.03); padding: 20px 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <span style="color: var(--primary); font-weight: 600;">Backend Architecture</span>
-                    <p style="color: var(--muted); font-size: 0.9rem; margin-top: 5px;">Scalable database design & API
-                        security</p>
+                <div class="l-card">
+                    <span>Backend Architecture</span>
+                    <p>Scalable database design & API security</p>
                 </div>
 
             </div>
@@ -221,11 +255,13 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com" target="_blank">anuragjadon0317@gmail.com</a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com"
+                                target="_blank">anuragjadon0317@gmail.com</a>
                         </li>
                         <li>
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..." target="_blank">+91 85320 91012</a>
+                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..."
+                                target="_blank">+91 85320 91012</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>

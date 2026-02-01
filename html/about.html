@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/theme-enhancements.css">
-    <link rel="stylesheet" href="../css/about-purple.css">
+    <link rel="stylesheet" href="../css/about-redesign.css">
     <link rel="stylesheet" href="../css/footer-enhanced.css">
 </head>
 
@@ -44,122 +44,153 @@
 
     </nav>
 
-    <section id="about" class="section visible" style="margin-top: 100px;">
-
-        <!-- Page Title with Purple Gradient -->
-        <div class="about-header" style="text-align: center; margin-bottom: 80px;">
-            <h2 class="about-title gradient-text" style="font-size: 3.5rem; font-weight: 900; margin-bottom: 16px;">
-                About Me
-            </h2>
-            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-                Calm builder · Strategic thinker · Continuous learner
-            </p>
+    <!-- Mini Header Cat (Hanging) -->
+    <div class="header-cat">
+        <div class="cat-body">
+            <div class="cat-tail"></div>
+            <div class="cat-head">
+                <div class="cat-ear left"></div>
+                <div class="cat-ear right"></div>
+                <div class="cat-eye left"></div>
+                <div class="cat-eye right"></div>
+            </div>
+            <div class="cat-paw left"></div>
+            <div class="cat-paw right"></div>
         </div>
+    </div>
 
-        <div class="container about-container-new" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <section id="about" class="about-section">
+        <h2 class="gradient-text" style="text-align: center; margin-bottom: 60px; font-size: 2.5rem; font-weight: 700;">
+            System Overview</h2>
 
-            <!-- Main Content Grid -->
-            <div class="about-grid"
-                style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; margin-bottom: 80px;">
+        <div class="blueprint-container">
 
-                <!-- Left: Story Card -->
-                <div class="about-story-card purple-card">
-                    <div class="card-glow"></div>
-                    <h3 class="card-title">My Story</h3>
+            <!-- Sidebar: HUD & Stats -->
+            <div class="blueprint-sidebar">
+                <div class="hud-stats">
+                    <div class="stat-block">
+                        <span class="tech-label">Location</span>
+                        <div class="stat-value" style="font-size: 1.5rem;">IND</div>
+                        <div class="stat-label">Mathura</div>
+                    </div>
 
-                    <p class="intro-text">
-                        I'm a calm builder who prefers silent, effective work over unnecessary words.
+                    <div class="stat-block">
+                        <span class="tech-label">Status</span>
+                        <div class="stat-value" style="font-size: 1.5rem; color: var(--secondary);">ONLINE</div>
+                        <div class="stat-label">Available</div>
+                    </div>
+
+                    <div class="stat-block">
+                        <span class="tech-label">Education</span>
+                        <div class="stat-value" style="font-size: 1.5rem;">B.Tech</div>
+                        <div class="stat-label">Computer Science</div>
+                    </div>
+
+                    <div class="stat-block">
+                        <span class="tech-label">Runtime</span>
+                        <div class="stat-value" style="font-size: 1.5rem;">2+ Yrs</div>
+                        <div class="stat-label">Experience</div>
+                    </div>
+
+                    <div class="stat-block">
+                        <span class="tech-label">Archives</span>
+                        <div class="stat-value" style="font-size: 1.5rem;">15+</div>
+                        <div class="stat-label">Projects working</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main: Story & Journey -->
+            <div class="blueprint-main">
+
+                <div class="story-section">
+                    <span class="tech-label">/// BIOGRAPHY_LOG_START</span>
+                    <h2 class="tech-heading">The Builder's Log</h2>
+                    <div class="marker-corner top-left"></div>
+                    <div class="marker-corner bottom-right"></div>
+
+                    <p class="tech-text">
+                        I'm a <span class="highlight">calm builder</span> who prefers silent, effective work over
+                        unnecessary words.
                     </p>
-
-                    <p>
+                    <p class="tech-text">
                         I'm interested in learning new technologies, designing clean user interfaces,
                         and solving problems in a structured way. My usual approach is simple:
-                        plan carefully, build patiently, refine continuously, and observe how things
+                        <span style="color: #fff;">plan carefully, build patiently, refine continuously</span>, and
+                        observe how things
                         can be improved.
                     </p>
-
-                    <p>
+                    <p class="tech-text">
                         Discipline, curiosity, and calmness guide the way I work. I believe in
                         giving my full potential to whatever I'm building — even when no one is watching.
                     </p>
+                    <span class="tech-label">/// BIOGRAPHY_LOG_END</span>
                 </div>
 
-                <!-- Right: Info Card -->
-                <div class="about-info-card purple-card">
-                    <div class="card-glow"></div>
-                    <h3 class="card-title">Quick Facts</h3>
-                    <ul class="info-list">
-                        <li>
-                            <span class="info-label">Role</span>
-                            <span class="info-value">Web Developer</span>
-                        </li>
-                        <li>
-                            <span class="info-label">Education</span>
-                            <span class="info-value">B.Tech (Computer Science)</span>
-                        </li>
-                        <li>
-                            <span class="info-label">Current Focus</span>
-                            <span class="info-value">Web Development & DSA</span>
-                        </li>
-                        <li>
-                            <span class="info-label">Mindset</span>
-                            <span class="info-value">Calm · Disciplined · Curious</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                <div class="journey-section">
+                    <span class="tech-label">/// SYSTEM_TIMELINE</span>
+                    <h2 class="tech-heading">Execution Path</h2>
 
-            <!-- Journey Section -->
-            <div class="journey-card purple-card" style="margin-bottom: 50px;">
-                <div class="card-glow"></div>
-                <h3 class="card-title" style="text-align: center; margin-bottom: 50px;">My Journey</h3>
-
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2021 - Present</span>
-                            <h4 class="timeline-title">B.Tech in Computer Science</h4>
-                            <p class="timeline-desc">Building a strong foundation in algorithms, data structures, and
-                                core CS concepts.</p>
+                    <div class="schematic-journey">
+                        <div class="schematic-item">
+                            <span class="schematic-year">2024 </span>
+                            <h3 class="schematic-title">B.Tech in Computer Science</h3>
+                            <p class="tech-text">Building a strong foundation in algorithms, data structures, and core
+                                CS concepts.</p>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2023</span>
-                            <h4 class="timeline-title">Started Web Development</h4>
-                            <p class="timeline-desc">Dove into HTML, CSS, and JS. Built my first responsive websites and
-                                fell in love with creating.</p>
+                        <div class="schematic-item">
+                            <span class="schematic-year">2024</span>
+                            <h3 class="schematic-title">Started Web Development</h3>
+                            <p class="tech-text">Dove into HTML, CSS, and JS. Built my first responsive websites.</p>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">Current</span>
-                            <h4 class="timeline-title">Expanding into Modern Tech</h4>
-                            <p class="timeline-desc">Focusing on React, deeply understanding DOM manipulation, and
-                                refining UI/UX skills.</p>
+                        <div class="schematic-item">
+                            <span class="schematic-year">CURRENT_STATE</span>
+                            <h3 class="schematic-title">Expanding into Modern Tech</h3>
+                            <p class="tech-text">Focusing on React, deeply understanding DOM manipulation, and refining
+                                UI/UX skills.</p>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Beyond Coding -->
-            <div class="interests-card purple-card">
-                <div class="card-glow"></div>
-                <h3 class="card-title" style="text-align: center; margin-bottom: 24px;">Beyond Coding</h3>
-                <p style="text-align: center; color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">
-                    When I'm not debugging, I enjoy
-                    <span style="color: var(--primary); font-weight: 600;">exploring new music genres</span>,
-                    <span style="color: var(--primary); font-weight: 600;">strategic gaming</span>, and
-                    <span style="color: var(--primary); font-weight: 600;">reading about tech innovations</span>.
-                    <br><br>
-                    I believe that a balanced mind leads to better code.
-                </p>
+            <!-- Right: Interests -->
+            <div class="blueprint-details">
+                <div>
+                    <span class="tech-label">/// PERIPHERALS</span>
+                    <h2 class="tech-heading" style="font-size: 1.5rem;">Interests</h2>
+                    <p class="tech-text">When not in terminal:</p>
+
+                    <div class="interests-grid">
+                        <div class="interest-node">
+                            <div class="interest-icon"><i class="fas fa-music"></i></div>
+                            <span class="interest-name">New Music</span>
+                        </div>
+                        <div class="interest-node">
+                            <div class="interest-icon"><i class="fas fa-chess-knight"></i></div>
+                            <span class="interest-name">Strategy Games</span>
+                        </div>
+                        <div class="interest-node">
+                            <div class="interest-icon"><i class="fas fa-book"></i></div>
+                            <span class="interest-name">Tech Reading</span>
+                        </div>
+                        <div class="interest-node">
+                            <div class="interest-icon"><i class="fas fa-dumbbell"></i></div>
+                            <span class="interest-name">Fitness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: auto;">
+                    <div style="border: 1px solid rgba(255,255,255,0.1); padding: 20px;">
+                        <span class="tech-label">SYSTEM_MESSAGE</span>
+                        <p class="tech-text" style="margin-bottom: 0;">"A balanced mind leads to better code."</p>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -230,11 +261,13 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com" target="_blank">anuragjadon0317@gmail.com</a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anuragjadon0317@gmail.com"
+                                target="_blank">anuragjadon0317@gmail.com</a>
                         </li>
                         <li>
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..." target="_blank">+91 85320 91012</a>
+                            <a href="https://wa.me/918532091012?text=Hi%20Anurag,%20I%20saw%20your%20portfolio..."
+                                target="_blank">+91 85320 91012</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
